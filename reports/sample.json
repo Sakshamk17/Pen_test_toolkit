@@ -1,0 +1,46 @@
+{
+    "module": "Banner Grabber",
+    "target": "scanme.nmap.org",
+    "port": 22,
+    "banner": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13",
+    "status": "success"
+},
+{
+    "module": "Port Scanner",
+    "target": "scanme.nmap.org",
+    "start_port": 22,
+    "end_port": 25,
+    "open_ports": [
+        22
+    ],
+    "status": "success"
+},
+{
+    "module": "SSH Brute Forcer",
+    "target": "127.0.0.1",
+    "username": "uname",
+    "wordlist": "wordlists/passwords.txt",
+    "success": false,
+    "password": null,
+    "status": "failed",
+    "error": "[Errno None] Unable to connect to port 22 on 127.0.0.1"
+},
+{
+    "module": "Directory Brute Forcer",
+    "target": "http://testphp.vulnweb.com/",
+    "wordlist": " wordlists/common_dirs.txt",
+    "found_paths": [],
+    "status": "failed",
+    "error": "[Errno 2] No such file or directory: ' wordlists/common_dirs.txt'"
+},
+{
+    "module": "Custom Brute Forcer",
+    "target": "http://testphp.vulnweb.com/login.php",
+    "username": "test",
+    "wordlist": "wordlists/passwords.txt",
+    "user_field": "uname",
+    "pass_field": "pass",
+    "success": true,
+    "password": "123456",
+    "status": "success"
+},
